@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="CopyRuntimeFiles" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+  <!-- Imports -->
+  <Import Project=".\Directories.proj"/>
+
+  <!-- Runtime files -->
+  <ItemGroup>
+
+    <!-- Autofac -->
+    <RuntimeFiles Include="$(RuntimeDir)\autofac\autofac.dll"/>
+    <RuntimeFiles Include="$(RuntimeDir)\autofac\autofac.configuration.dll"/>
+
+    <!-- Logging -->
+    <RuntimeFiles Include="$(RuntimeDir)\Common.Logging\Common.Logging.dll"/>
+    <RuntimeFiles Include="$(RuntimeDir)\Common.Logging\Common.Logging.Log4Net.dll"/>
+
+
+    <!-- Microsoft practices -->
+    <RuntimeFiles Include="$(RuntimeDir)\Prism\Microsoft.Practices.ServiceLocation.dll"/>
+
+    <!-- Third party runtime files-->
+    <!-- log4net -->
+    <RuntimeFiles Include="$(RuntimeDir)\log4net\log4net.dll"/>
+
+    <!-- Microsoft Contracts and Threading (used for .NET 3.5 only)-->
+    <RuntimeFiles Condition="$(TargetVersion)=='3.5'" Include="$(RuntimeDir)\NET Extensions\Microsoft.Contracts.dll"/>
+    <RuntimeFiles Condition="$(TargetVersion)=='3.5'" Include="$(RuntimeDir)\NET Extensions\System.Threading.dll"/>
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Systecs.Framework -->
+    <Systecs_Framework Include="$(RuntimeDir)\SAF\Systecs.Framework\**\*.dll" />
+    <Systecs_Framework Include="$(RuntimeDir)\SAF\Systecs.Framework\**\*.pdb" />
+  </ItemGroup>
+
+  <Target Name="CopyRuntimeFiles">
+
+    <Copy SourceFiles="@(RuntimeFiles)" DestinationFolder="$(DeliveryDir)\$(TargetVersion)" SkipUnchangedFiles="true"/>
+
+    <Copy SourceFiles="@(Systecs_Framework)"
+          DestinationFolder="$(DeliveryDir)\$(TargetVersion)\%(RecursiveDir)"
+          SkipUnchangedFiles="true"/>
+
+  </Target>
+
+
+</Project>

@@ -1,0 +1,75 @@
+<?xml
+version="1.0"
+encoding="UTF-8" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Bundle Name="OMS.Water.Sample" 
+          Version="0.3.0.0"
+          Manufacturer="OMS"
+          UpgradeCode="A96869E9-F335-4208-8A71-83E975FCF299" >
+
+    <?include OMS.Water.Bootstrapper.Payloads.wxi?>
+    <?include OMS.Water.Bootstrapper.Payloads35.wxi?>
+    <?include OMS.Water.Bootstrapper.PayloadsDebug.wxi?>
+
+    <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+
+      <PayloadGroupRef Id="OMS.Water" />
+      <PayloadGroupRef Id="OMS.Water.35" />
+      <PayloadGroupRef Id="OMS.Water.Debug" />
+
+
+      <Payload Name='OMS.Water.Sample.Contracts.UIP.dll'
+               SourceFile='$(var.OMS.Water.Sample.Contracts.UIP.TargetPath)' />
+      <Payload Name='OMS.Water.Sample.UIP.dll'
+               SourceFile='$(var.OMS.Water.Sample.UIP.TargetPath)' />
+      <Payload Name='OMS.Water.Sample.GUI.dll'
+               SourceFile='$(var.OMS.Water.Sample.GUI.TargetPath)' />
+      <Payload Name='OMS.Water.Sample.GUI.pdb'
+               SourceFile='$(var.OMS.Water.Sample.GUI.TargetDir)$(var.OMS.Water.Sample.GUI.TargetName).pdb' />
+      <Payload Name='OMS.Water.Sample.Module.dll'
+               SourceFile='$(var.OMS.Water.Sample.Module.TargetPath)' />
+      <Payload Name='de\OMS.Water.Sample.GUI.resources.dll'
+               SourceFile='$(var.OMS.Water.Sample.GUI.TargetDir)de\$(var.OMS.Water.Sample.GUI.TargetName).resources.dll' />
+      <Payload Name='en-US\OMS.Water.Sample.GUI.resources.dll'
+               SourceFile='$(var.OMS.Water.Sample.GUI.TargetDir)en-US\$(var.OMS.Water.Sample.GUI.TargetName).resources.dll' />
+
+      <!--<Payload Name='de\TestUI.resources.dll' SourceFile='C:\Temp\Bootstrapper2\TestUI\bin\Debug\de\TestUI.resources.dll'  />-->
+      <!--<Payload SourceFile='License.rtf' />-->
+      <!--<Payload Name='de\mbapreq.wxl' SourceFile='de\mbapreq.wxl'/>-->
+      <!--<Payload Name='de-DE\mbapreq.wxl' SourceFile='de-DE\mbapreq.wxl'/>-->
+
+    </BootstrapperApplicationRef>
+
+
+    <Chain>
+      <PackageGroupRef Id='Netfx4Full' />
+
+      <!--<PackageGroupRef Id='TestMsi' />-->
+
+      <PackageGroupRef Id='TestDialog' />
+      <!--<PackageGroupRef Id='TestReboot' />-->
+
+      <!--<RollbackBoundary />
+      <MsiPackage Id='KiBoxCockpit131' Vital='yes' DisplayInternalUI='no' Compressed='no' After='Netfx4Full' 
+                  Name='KiBoxCockpit_1.3.1.3571_EN_Setup.msi' SourceFile='C:\Users\olaf_meyer\Desktop\Cockpit_1.3.1.3571\KiBoxCockpit_1.3.1.3571_EN_Setup.msi' >
+      </MsiPackage>-->
+
+      <!--<MsiPackage Id='KiBoxCockpit130' Vital='yes' DisplayInternalUI='no' Compressed='no' After='Netfx4Full'
+            Name='KiBoxCockpit_1.3.0.3073_EN_Setup.msi' SourceFile='C:\Users\olaf_meyer\Desktop\V1.3.0.3073 (RC 3, Final Release)\KiBoxCockpit_1.3.0.3073_EN_Setup.msi' >
+      </MsiPackage>-->
+
+      <!--<MsiPackage Id='KiBoxCockpit'
+                  Vital='yes'
+                  Compressed='no'
+                  DisplayInternalUI='no'
+                  Name='KiBoxCockpit.msi'
+                  SourceFile='C:\Users\olaf_meyer\Desktop\Cockpit_1.3.1.3502\KiBoxCockpit_1.3.1.3502_EN_Setup.msi'>
+      </MsiPackage>-->
+    </Chain>
+  </Bundle>
+</Wix>
+
+<!--<MsiProperty Name='INSTALLLOCATION'
+                     Value='[InstallLocation]'>
+        </MsiProperty>-->

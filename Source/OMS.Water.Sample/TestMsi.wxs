@@ -1,0 +1,18 @@
+<?xml
+version="1.0"
+encoding="utf-8" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+
+    <PackageGroup Id="TestMsi">
+      <MsiPackage Id='TestMsi' Vital='yes' DisplayInternalUI='yes' Compressed='yes' Cache='yes' CacheId='TestMsi' Visible='yes'
+                   Name='Setup.msi' SourceFile='..\..\Runtime\TestApps\Setup.msi' SuppressSignatureVerification='yes'>
+        <!--<MsiProperty Name='INSTALLDIR' Value='[InstallFolder]'/>-->
+      </MsiPackage>
+
+    </PackageGroup>
+
+  </Fragment>
+</Wix>

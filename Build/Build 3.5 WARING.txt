@@ -1,0 +1,6 @@
+
+
+WARNING:
+
+You must checkin all changes BEFORE running the BuildAll35.proj build script. 
+The build script converts all project files to .NET 3.5 and performs a REVERT after the build.

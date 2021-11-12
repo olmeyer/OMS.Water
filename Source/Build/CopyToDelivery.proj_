@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+
+  <ItemGroup>
+    
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper\bin\$(Configuration)\OMS.Water.Bootstrapper.dll" />
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper\bin\$(Configuration)\OMS.Water.Bootstrapper.pdb" />
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper\bin\$(Configuration)\OMS.Water.Bootstrapper.dll.config" />
+
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.Contracts.UIP\bin\$(Configuration)\OMS.Water.Bootstrapper.Contracts.UIP.dll" />
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.Contracts.UIP\bin\$(Configuration)\OMS.Water.Bootstrapper.Contracts.UIP.pdb" />
+
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.Module\bin\$(Configuration)\OMS.Water.Bootstrapper.Module.dll" />
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.Module\bin\$(Configuration)\OMS.Water.Bootstrapper.Module.pdb" />
+
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.UIP\bin\$(Configuration)\OMS.Water.Bootstrapper.UIP.dll" />
+    <CopyDelivery Include="..\OMS.Water.Bootstrapper.UIP\bin\$(Configuration)\OMS.Water.Bootstrapper.UIP.pdb" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <Target Name="build">
+
+    <Copy SourceFiles="@(CopyDelivery)" DestinationFolder="$(DeliveryDir)" SkipUnchangedFiles="true" />
+
+  </Target>
+
+</Project>

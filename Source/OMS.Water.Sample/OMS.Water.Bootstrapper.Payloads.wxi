@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <PayloadGroup Id="OMS.Water">
+
+    <Payload Name='Autofac.dll'
+             SourceFile='..\..\Runtime\Autofac\Autofac.dll' />
+
+    <Payload Name='Common.Logging.dll'
+             SourceFile='..\..\Runtime\Common.Logging\Common.Logging.dll' />
+
+    <Payload Name='Microsoft.Practices.ServiceLocation.dll'
+             SourceFile='..\..\Runtime\Prism\Microsoft.Practices.ServiceLocation.dll' />
+
+    <Payload Name='Systecs.Framework.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.dll' />
+    <Payload Name='Systecs.Framework.Autofac.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.Autofac.dll' />
+    <Payload Name='Systecs.Framework.Module.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.Module.dll' />
+    <Payload Name='Systecs.Framework.WPF.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.WPF.dll' />
+    <Payload Name='Systecs.Framework.WPF.Resources.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.WPF.Resources.dll' />
+
+    <Payload Name='OMS.Deep.Cache.dll'
+         SourceFile='..\..\Runtime\OMS.Deep\OMS.Deep.Cache.dll' />
+
+    <Payload Name='BootstrapperCore.config'
+             SourceFile='..\OMS.Water.Bootstrapper\bin\Debug\OMS.Water.Bootstrapper.dll.config' />
+    <Payload Name='OMS.Water.Bootstrapper.dll'
+             SourceFile='$(var.OMS.Water.Bootstrapper.TargetPath)' />
+    <Payload Name='OMS.Water.Bootstrapper.UIP.dll'
+             SourceFile='$(var.OMS.Water.Bootstrapper.UIP.TargetPath)' />
+    <Payload Name='OMS.Water.Bootstrapper.Contracts.UIP.dll'
+             SourceFile='$(var.OMS.Water.Bootstrapper.Contracts.UIP.TargetPath)' />
+    <Payload Name='OMS.Water.Bootstrapper.Module.dll'
+             SourceFile='$(var.OMS.Water.Bootstrapper.Module.TargetPath)' />
+
+  </PayloadGroup>
+
+</Include>

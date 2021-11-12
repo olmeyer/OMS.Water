@@ -1,0 +1,31 @@
+<?xml
+version="1.0"
+encoding="utf-8" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+
+    <PackageGroup Id="TestDialog">
+      <ExePackage Id="TestDialog"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="no"
+                  Vital="no"
+                  Protocol="none"
+                  InstallCommand="/chainingpackage OMS.Water"
+                  RepairCommand="/chainingpackage OMS.Water"
+                  UninstallCommand=" /chainingpackage OMS.Water"
+                  SourceFile="..\..\Runtime\TestApps\ShowDialog.exe"
+                  DetectCondition="1"
+                  InstallCondition="0">
+        <ExitCode Behavior="success" Value="0"/>
+        <ExitCode Behavior="success" Value="3010"/>
+        
+      </ExePackage>
+
+    </PackageGroup>
+
+  </Fragment>
+</Wix>

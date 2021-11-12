@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="ConvertTo35" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+	<!-- Imports -->
+	<Import Project=".\Directories.proj"/>
+
+
+  <Target Name="ConvertTo35" > 
+    
+    <ItemGroup>
+      <CSProjectsToConvert Include="$(SourceDir)\**\*.csproj" />
+    </ItemGroup>
+
+    <!-- Set build targets to .NET 3.5  -->
+    <Systecs.Build.Tasks.ConvertProject Projects="@(CSProjectsToConvert)" TargetVersion="3.5" ReferenceDir="." />
+
+  </Target>
+
+</Project>

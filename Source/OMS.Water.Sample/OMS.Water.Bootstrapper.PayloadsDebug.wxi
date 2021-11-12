@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <PayloadGroup Id="OMS.Water.Debug">
+
+    <Payload Name='Systecs.Framework.pdb'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.pdb' />
+    <Payload Name='Systecs.Framework.WPF.pdb'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.WPF.pdb' />
+    <Payload Name='OMS.Water.Bootstrapper.pdb'
+             SourceFile='$(var.OMS.Water.Bootstrapper.TargetDir)$(var.OMS.Water.Bootstrapper.TargetName).pdb' />
+
+  </PayloadGroup>
+
+</Include>

@@ -1,0 +1,31 @@
+<?xml
+version="1.0"
+encoding="utf-8" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+
+    <PackageGroup Id="TestReboot">
+      <ExePackage Id="TestReboot"
+                  Cache="no"
+                  Compressed="no"
+                  PerMachine="yes"
+                  Permanent="yes"
+                  Vital="yes"
+                  Protocol="none"
+                  InstallCommand="/chainingpackage OMS.Water"
+                  RepairCommand="/chainingpackage OMS.Water"
+                  UninstallCommand=" /chainingpackage OMS.Water"
+                  SourceFile="..\..\Runtime\TestApps\ReturnCode3010.exe"
+                  DetectCondition="0"
+                  InstallCondition="1">
+        <ExitCode Behavior="success" Value="0"/>
+        <ExitCode Behavior="success" Value="3010"/>
+        
+      </ExePackage>
+
+    </PackageGroup>
+
+  </Fragment>
+</Wix>
