@@ -5,7 +5,10 @@ using System.Diagnostics;
 using System.Windows;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using Systecs.Framework;
+using Systecs.Framework.AssemblyResolver;
 using Systecs.Framework.Autofac;
+using Systecs.Framework.Autofac.Bootstrapper;
+using Systecs.Framework.FrameworkApplication;
 
 #endregion
 

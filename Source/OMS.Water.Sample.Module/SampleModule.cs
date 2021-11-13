@@ -28,7 +28,7 @@ namespace OMS.Water.Bootstrapper.Module
             builder.Register<Window>( c => new InstallerWindow() )
                     .OnActivating(
                             handler =>
-                            handler.Instance.DataContext = GetLanguages( handler.Context.ResolveNamed<ILocalizer>( "Framework.Localizer" ) ) )
+                            handler.Instance.DataContext = GetLanguages( handler.Context.Resolve<ILocalizer>() ) )
                     .Named<Window>( "Bootstrapper.InstallerWindow" )
                     .SingleInstance();
 

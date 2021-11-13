@@ -16,6 +16,8 @@
              SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.dll' />
     <Payload Name='Systecs.Framework.Autofac.dll'
              SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.Autofac.dll' />
+    <Payload Name='Systecs.Framework.Math.dll'
+             SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.Math.dll' />
     <Payload Name='Systecs.Framework.Module.dll'
              SourceFile='..\..\Runtime\SAF\Systecs.Framework\Systecs.Framework.Module.dll' />
     <Payload Name='Systecs.Framework.WPF.dll'

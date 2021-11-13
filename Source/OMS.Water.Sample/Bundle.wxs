@@ -9,13 +9,11 @@ encoding="UTF-8" ?>
           UpgradeCode="A96869E9-F335-4208-8A71-83E975FCF299" >
 
     <?include OMS.Water.Bootstrapper.Payloads.wxi?>
-    <?include OMS.Water.Bootstrapper.Payloads35.wxi?>
     <?include OMS.Water.Bootstrapper.PayloadsDebug.wxi?>
 
     <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
 
       <PayloadGroupRef Id="OMS.Water" />
-      <PayloadGroupRef Id="OMS.Water.35" />
       <PayloadGroupRef Id="OMS.Water.Debug" />
 
 

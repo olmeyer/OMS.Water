@@ -4,6 +4,8 @@ using System.Windows;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using OMS.Water.Bootstrapper.ViewModels;
 using Systecs.Framework;
+using Systecs.Framework.FrameworkApplication;
+using Systecs.Framework.LoadProgress;
 using Systecs.Framework.Resources;
 
 #endregion

@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Windows;
 using OMS.Water.Bootstrapper.ViewModels;
 using Systecs.Framework;
+using Systecs.Framework.FrameworkApplication;
+using Systecs.Framework.LoadProgress;
 
 #endregion
 

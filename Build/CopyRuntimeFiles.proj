@@ -13,7 +13,7 @@
 
     <!-- Logging -->
     <RuntimeFiles Include="$(RuntimeDir)\Common.Logging\Common.Logging.dll"/>
-    <RuntimeFiles Include="$(RuntimeDir)\Common.Logging\Common.Logging.Log4Net.dll"/>
+    <RuntimeFiles Include="$(RuntimeDir)\Common.Logging\Common.Logging.Log4Net1211.dll"/>
 
 
     <!-- Microsoft practices -->
@@ -22,10 +22,6 @@
     <!-- Third party runtime files-->
     <!-- log4net -->
     <RuntimeFiles Include="$(RuntimeDir)\log4net\log4net.dll"/>
-
-    <!-- Microsoft Contracts and Threading (used for .NET 3.5 only)-->
-    <RuntimeFiles Condition="$(TargetVersion)=='3.5'" Include="$(RuntimeDir)\NET Extensions\Microsoft.Contracts.dll"/>
-    <RuntimeFiles Condition="$(TargetVersion)=='3.5'" Include="$(RuntimeDir)\NET Extensions\System.Threading.dll"/>
 
   </ItemGroup>
 

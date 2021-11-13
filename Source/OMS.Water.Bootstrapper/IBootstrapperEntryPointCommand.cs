@@ -1,6 +1,7 @@
 ﻿#region
 
 using Systecs.Framework;
+using Systecs.Framework.FrameworkApplication;
 
 #endregion
 

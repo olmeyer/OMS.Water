@@ -6,6 +6,7 @@ using Autofac;
 using Common.Logging;
 using OMS.Water.Bootstrapper.ViewModels;
 using Systecs.Framework;
+using Systecs.Framework.FrameworkApplication;
 using Systecs.Framework.Resources;
 using Systecs.Framework.WPF.Resources;
 
@@ -49,7 +50,7 @@ namespace OMS.Water.Bootstrapper.Module
 
             s_log.Debug( m => m( "Register EntryPointCommands" ) );
             builder.Register<IBootstrapperEntryPointCommand>( c => new BootstrapperEntryPointCommand( c.ResolveNamed<Window>( "Bootstrapper.InstallerWindow" ),
-                                                                                                      c.Resolve<IBootstrapperViewModel>(), c.ResolveNamed<ILocalizer>("Framework.Localizer")) )
+                                                                                                      c.Resolve<IBootstrapperViewModel>(), c.Resolve<ILocalizer>()) )
                     .OnActivated( handler => handler.Instance.Application = handler.Context.ResolveNamed<IFrameworkApplication>( "Framework.Program.UI" ) )
                     .Named<IBootstrapperEntryPointCommand>("EntryPointCommand.UI")
                     .SingleInstance();
@@ -87,7 +88,7 @@ namespace OMS.Water.Bootstrapper.Module
                     .SingleInstance();
 
             s_log.Debug(m => m("  Register bootstrapper view.model."));
-            builder.Register<IBootstrapperViewModel>( c => new BootstrapperViewModel { Localizer = c.ResolveNamed<ILocalizer>( "Framework.Localizer" ) } )
+            builder.Register<IBootstrapperViewModel>( c => new BootstrapperViewModel { Localizer = c.Resolve<ILocalizer>() } )
                     .OnActivating( handler => handler.Instance.RegisterPackages( handler.Context.Resolve<IEnumerable<IPackageDescriptor>>() ) )
                     .OnActivating(
                             handler =>

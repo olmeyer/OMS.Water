@@ -109,10 +109,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OMS.Water.Bootstrapper.Payloads35.wxi" />
     <Content Include="OMS.Water.Bootstrapper.PayloadsDebug.wxi" />
     <Content Include="OMS.Water.Bootstrapper.Payloads.wxi" />
+    <Content Include="packages.config" />
   </ItemGroup>
+  <PropertyGroup>
+    <WixToolPath>$(SolutionDir)packages\WiX.Toolset.UnofficialFork.3.11.2\tools\wix\</WixToolPath>
+    <WixTargetsPath>$(WixToolPath)wix.targets</WixTargetsPath>
+    <WixTasksPath>$(WixToolPath)WixTasks.dll</WixTasksPath>
+  </PropertyGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

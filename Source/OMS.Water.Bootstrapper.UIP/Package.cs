@@ -25,7 +25,7 @@ namespace OMS.Water.Bootstrapper
 
         static Package()
         {
-            //s_localizer = ServiceLocator.Current.GetInstance<ILocalizer>("Framework.Localizer");
+            //s_localizer = ServiceLocator.Current.GetInstance<ILocalizer>();
         }
 
         #region IPackage Members
